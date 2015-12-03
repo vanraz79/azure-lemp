@@ -1,10 +1,11 @@
 #!/bin/sh
 
-# Install EPEL repos
-yum install -y epel-release
-
 # Update the system
 yum update -y
+
+# Use the temporary disk /dev/sdb1 for swap
+mkswap -f /dev/sdb1
+swapon /dev/sdb1
 
 # Install MariaDB from official repos
 echo '[mariadb]
@@ -38,6 +39,10 @@ curl https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/def
 # Configure PHP
 curl https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/php.ini > /etc/php.ini
 
-# Make nginx and php start at boot
+# Start Nginx and PHP
+service nginx start
+service php-fpm start
+
+# Make Nginx and PHP start at boot
 chkconfig nginx on
 chkconfig php-fpm on
