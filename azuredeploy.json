@@ -194,6 +194,37 @@
             "name": "BackendPool1"
           }
         ],
+        "loadBalancingRules": [
+          {
+            "properties": {
+              "frontendIPConfiguration": {
+                "id": "[variables('frontEndIpConfigRef')]"
+              },
+              "backendAddressPool": {
+                "id": "[variables('lbPoolRef')]"
+              },
+              "probe": {
+                "id": "[concat(variables('lbRef'), '/probes/HTTPprobe')]"
+              },
+              "protocol": "Tcp",
+              "frontendPort": 80,
+              "backendPort": 80,
+              "idleTimeoutInMinutes": 15
+            },
+            "name": "HTTP"
+          }
+        ],
+        "probes": [
+          {
+            "properties": {
+              "protocol": "Tcp",
+              "port": 80,
+              "intervalInSeconds": 15,
+              "numberOfProbes": 2
+            },
+            "name": "HTTPprobe"
+          }
+        ],
         "inboundNatRules": [
           {
             "name": "SSH-VM1",
