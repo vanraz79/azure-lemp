@@ -1,0 +1,24 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dnsNameforLBIP": {
+      "value": "setme"
+    },
+    "adminUsername": {
+      "value": "setme"
+    },
+    "sshKeyData": {
+      "value": "setme"
+    },
+    "namePrefix": {
+      "value": "setme"
+    },
+    "storageAccountName": {
+      "value": "setme"
+    },
+    "diagStorageAccountName": {
+      "value": "setme"
+    }
+  }
+}
