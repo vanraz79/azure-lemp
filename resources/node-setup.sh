@@ -16,6 +16,13 @@ gpgcheck = 1
 enabled = 1' | tee /etc/yum.repos.d/mariadb.repo
 yum install -y MariaDB-server MariaDB-client
 
+# Download MariaDB configuration file
+curl https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/mariadb.cnf > /etc/my.cnf.d/server.cnf
+
+# Start MariaDB and make it start at boot
+#service mariadb start
+#chkconfig mariadb start
+
 # Install Nginx and PHP5-FPM
 echo '[nginx]
 name = nginx

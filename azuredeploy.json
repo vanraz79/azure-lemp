@@ -567,12 +567,12 @@
       "properties": {
         "publisher": "Microsoft.OSTCExtensions",
         "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.2",
+        "typeHandlerVersion": "1.4",
         "settings": {
           "fileUris": [
             "https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/node-setup.sh"
           ],
-          "commandToExecute": "sh node-setup.sh"
+          "commandToExecute": "[concat('VM1NAME=',variables('vm1Name'),' VM2NAME=',variables('vm2Name'),' VM3NAME=',variables('vm3Name'),' sh node-setup.sh')]"
         }
       }
     },
@@ -587,12 +587,12 @@
       "properties": {
         "publisher": "Microsoft.OSTCExtensions",
         "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.2",
+        "typeHandlerVersion": "1.4",
         "settings": {
           "fileUris": [
             "https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/node-setup.sh"
           ],
-          "commandToExecute": "sh node-setup.sh"
+          "commandToExecute": "[concat('VM1NAME=',variables('vm1Name'),' VM2NAME=',variables('vm2Name'),' VM3NAME=',variables('vm3Name'),' sh node-setup.sh')]"
         }
       }
     },
@@ -607,7 +607,7 @@
       "properties": {
         "publisher": "Microsoft.OSTCExtensions",
         "type": "CustomScriptForLinux",
-        "typeHandlerVersion": "1.2",
+        "typeHandlerVersion": "1.4",
         "settings": {
           "fileUris": [
             "https://gist.githubusercontent.com/EgoAleSum/06f4697370f87cde9be6/raw/0e4e3a2434fc6083fe3b4d666175f211f428b383/do-nothing.sh"
