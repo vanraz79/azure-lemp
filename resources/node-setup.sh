@@ -17,7 +17,11 @@ enabled = 1' | tee /etc/yum.repos.d/mariadb.repo
 yum install -y MariaDB-server MariaDB-client
 
 # Download MariaDB configuration file
-curl https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/mariadb.cnf > /etc/my.cnf.d/server.cnf
+curl https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/mariadb.cnf.tpl \
+	| sed "s/\%VM1NAME\%/$VM1NAME/g" \
+	| sed "s/\%VM2NAME\%/$VM2NAME/g" \
+	| sed "s/\%VM3NAME\%/$VM3NAME/g" \
+	| tee /etc/my.cnf.d/server.cnf
 
 # Start MariaDB and make it start at boot
 #service mariadb start
