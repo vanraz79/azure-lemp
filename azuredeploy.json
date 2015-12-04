@@ -434,6 +434,7 @@
       "name": "[variables('vm2Name')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vm1Name'))]",
         "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]",
         "[concat('Microsoft.Storage/storageAccounts/', parameters('diagStorageAccountName'))]",
         "[concat('Microsoft.Network/networkInterfaces/', variables('nic2Name'))]",
@@ -498,6 +499,7 @@
       "name": "[variables('vm3Name')]",
       "location": "[resourceGroup().location]",
       "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', variables('vm1Name'))]",
         "[concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName'))]",
         "[concat('Microsoft.Storage/storageAccounts/', parameters('diagStorageAccountName'))]",
         "[concat('Microsoft.Network/networkInterfaces/', variables('nic3Name'))]",
