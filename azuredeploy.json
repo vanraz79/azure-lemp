@@ -558,7 +558,7 @@
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vm1Name'),'/donothing')]",
+      "name": "[concat(variables('vm1Name'),'/nodesetup')]",
       "apiVersion": "2015-05-01-preview",
       "location": "[resourceGroup().location]",
       "dependsOn": [
@@ -570,15 +570,15 @@
         "typeHandlerVersion": "1.2",
         "settings": {
           "fileUris": [
-            "https://gist.githubusercontent.com/EgoAleSum/06f4697370f87cde9be6/raw/0e4e3a2434fc6083fe3b4d666175f211f428b383/do-nothing.sh"
+            "https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/node-setup.sh"
           ],
-          "commandToExecute": "sh do-nothing.sh"
+          "commandToExecute": "sh node-setup.sh"
         }
       }
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
-      "name": "[concat(variables('vm2Name'),'/donothing')]",
+      "name": "[concat(variables('vm2Name'),'/nodesetup')]",
       "apiVersion": "2015-05-01-preview",
       "location": "[resourceGroup().location]",
       "dependsOn": [
@@ -590,9 +590,9 @@
         "typeHandlerVersion": "1.2",
         "settings": {
           "fileUris": [
-            "https://gist.githubusercontent.com/EgoAleSum/06f4697370f87cde9be6/raw/0e4e3a2434fc6083fe3b4d666175f211f428b383/do-nothing.sh"
+            "https://raw.githubusercontent.com/EgoAleSum/azure-lemp/master/resources/node-setup.sh"
           ],
-          "commandToExecute": "sh do-nothing.sh"
+          "commandToExecute": "sh node-setup.sh"
         }
       }
     },
